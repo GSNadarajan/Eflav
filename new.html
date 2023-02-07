@@ -7,9 +7,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <title>Eflav</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <style>
 
-.car1{
+/* .car1{
   background: rgba(255,255,255,0.1);
   box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
 
@@ -19,7 +20,7 @@
   border-radius:30px;
   box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
 
-}
+} */
 
   .card{
 background: rgba(255, 255, 255, 0.08);
@@ -30,7 +31,7 @@ backdrop-filter: blur(1.5px);
 border: 1px solid rgba(255, 255, 255, 0.41);
   }
   @media screen and (min-width:992px) {
- .mob-nav{
+ body{
   display:none;
  }
 }
@@ -50,6 +51,12 @@ border: 1px solid rgba(255, 255, 255, 0.41);
  }
 }
 
+
+/* #snacks{
+  display:none;
+} */
+
+
     </style>
 </head>
 <body  style="background-color:#1a1a1a;">
@@ -64,7 +71,7 @@ border: 1px solid rgba(255, 255, 255, 0.41);
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3  text-white rounded" href="#popcorn">Popcorn</a></li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3  text-white rounded" href="#snacks">Snacks</a></li>
+                    <li onclick="show_snacks()" class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3  text-white rounded" href="#snacks">Snacks</a></li>
                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 text-white rounded" href="#beverages">Bevarages</a></li>
 
 
@@ -81,33 +88,98 @@ border: 1px solid rgba(255, 255, 255, 0.41);
             </div> 
         </nav>
         
-        <nav class="nav " style="margin-top: 70px;">
-          
+        <nav class="nav scrollmenu" style="margin-top: 70px;">
           <div class="" style="text-align:center;">
-          <a class="nav-link text-white" href="#"><img src="./images/bevarages.jpg" height="50px;" width="50px" style="border-radius: 50%;border:2px solid #ff2c2c"></a>
+            <a class="nav-link text-white"  onclick="showOrHideDiv()"><img src="./images/bevarages.jpg" height="65px;" width="65px" style="border-radius: 50%;border:2px solid #ff2c2c" ></a>
+            <span class="text-white" style="text-align:center;">Combo</span>
+          </div>
+          <!-- <div class="" style="text-align:center;">
+            <a class="nav-link text-white" onclick="show_all()"><img src="./images/bevarages.jpg" height="65px;" width="65px" style="border-radius: 50%;border:2px solid #ff2c2c"></a>
+            <span class="text-white" style="text-align:center;">All</span>
+          </div>
+          <div class="" style="text-align:center;">
+          <a class="nav-link text-white" onclick="show_bevarges()"><img src="./images/bevarages.jpg" height="65px;" width="65px" style="border-radius: 50%;border:2px solid #ff2c2c"></a>
           <span class="text-white" style="text-align:center;">Bevarages</span>
-        </div>
+        </div> -->
         <div class="" style="text-align:center;">
-          <a class="nav-link text-white" href="#"><img src="./images/snacks.jpg" height="50px;" width="50px" style="border-radius: 50%;border:2px solid #ff2c2c"></a>
+          <a onclick="show_snacks()" class="nav-link text-white"><img src="./images/snacks.jpg" height="65px;" width="65px" style="border-radius: 50%;border:2px solid #ff2c2c"></a>
           <span class="text-white" style="text-align:center;">Snacks</span>
         </div>
         <div class="" style="text-align:center;">
-          <a class="nav-link text-white" href="#popcorn"><img src="./images/popcorn.jpg" height="50px;" width="50px" style="border-radius: 50%;border:2px solid #ff2c2c"></a>
+          <a onclick="show_popcorn()"  class="nav-link text-white"><img src="./images/popcorn.jpg" height="65px;" width="65px" style="border-radius: 50%;border:2px solid #ff2c2c"></a>
           <span class="text-white" style="text-align:center;">Popcorns</span>
         </div>
         </nav>
         </div>
         
-    
-        <section id="snacks" >
-      <div class="container mt-2" style="margin-top:80px !important;" >
-      <h3 style="color:white;font-weight:bold">Snacks</h3>
-
-          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-4 g-3 mt-3">
+        <section id="combos"   >
+          <div class="container mt-2" style="margin-top:40px !important;" >
+            <h3 style="color:white;font-weight:bold">Combo</h3>
+      
+              <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-4 g-3 mt-3">
+            
+                <div class="col">
+                  <div class="card shadow-sm zoom car1">
+                  <div class="card-body mt-2" style="height:230px;width:100%" >
+                    <div style="text-align: center;padding:10px">
+                    <img src="./images/popcorn.jpg" class="img-fluid ml-5" style="height:120px;width:120px;border-radius:10px;">
+                    <span style="color:white;padding:5px;"> + </span>
+                    <img src="./images/puff.jpg" class="img-fluid ml-5" style="height:120px;width:120px;border-radius:10px;">
+                    </div> 
         
+                    <div style="text-align: center;">
+                      <h3 class="mr-5" style="font-weight:bold;font-size:25px;color:white;margin-top:10px;"  >Popcorn + Puff</h3>
+                      <br>
+                      <h6  class="" style="color:white;margin-top:-30px;" ><s>Rs:110/</s><bold>&nbsp;&nbsp;Rs:100/-</bold>  </h6>
+                      <br>
+                      
+                    </div>
+                    <button type="button" class="btn mr-1" style="float:right;background-color:#ff2c2c;color:white;margin-top:-68px;">Add +</button>
+
+                    </div>
+                  </div>
+                </div>
 
                 <div class="col">
                   <div class="card shadow-sm zoom car1">
+                  <div class="card-body mt-2" style="height:260px;width:100%" >
+                    <div style="text-align: center;padding:10px">
+                    <img src="./images/popcorn.jpg" class="img-fluid ml-5" style="height:120px;width:120px;border-radius:10px;">
+                    <span style="color:white;padding:5px;"> + </span>
+                    <img src="./images/puff.jpg" class="img-fluid ml-5" style="height:120px;width:120px;border-radius:10px;">
+                    </div> 
+        
+                    <div style="text-align: center;">
+                      <h3 class="mr-5" style="font-weight:bold;font-size:25px;color:white;margin-top:10px;"  >Popcorn + Puff</h3>
+                      <br>
+                      <p  class="" style="opacity:0.5;color:white;margin-top:-30px;" >Price: 50rs + 30rs</p>
+                      <br>
+                      <p  class="" style="opacity:0.5;color:white;margin-top:-40px;" >Total: 80rs</p>
+                      <br>
+                    </div>
+                    <button type="button" class="btn mr-1" style="float:right;background-color:#ff2c2c;color:white;margin-top:-78px;">Add +</button>
+
+                    </div>
+                  </div>
+                </div>
+      
+      
+      
+                  </div>
+             
+            </div>
+          
+          </section>
+      
+        <section id="snacks" >
+      <div class="container mt-2" style="margin-top:50px !important;" >
+      <h3 style="color:white;font-weight:bold">Snacks</h3>
+
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 g-3 mt-3">
+        
+
+                <div class="col">
+                  <div class="card shadow-sm zoom">
                   <div class="card-body mt-2" style="height:160px;width:100%" >
                     <img src="./images/popcorn.jpg" class="img-fluid ml-5" style="height:120px;width:120px;border-radius:10px;">
         
@@ -241,7 +313,7 @@ border: 1px solid rgba(255, 255, 255, 0.41);
         </div>
       
         </section>
-        <section id="popcorn" >
+        <section id="popcorn"   >
         <div class="container mt-2" style="margin-top:40px !important;" >
           <h3 style="color:white;font-weight:bold">Popcorns</h3>
     
@@ -272,6 +344,31 @@ border: 1px solid rgba(255, 255, 255, 0.41);
     
       
 
-    </body>
+    <script>
+      function show_snacks() {
+        $("#snacks").show();
+        $("#beverages").hide();
+        $("#popcorn").hide();
+      }
+      function show_popcorn(){
+        $("#popcorn").show();
+        $("#snacks").hide();
+        $("#beverages").hide();
+      }
+  
+      function show_bevarges(){
+        $("#bevarages").show();
+        $("#snacks").hide();
+        $("#popcorn").hide();
+      }
+      function show_all(){
+        $("#popcorn").show();
+        $("#snacks").show();
+        $("#beverages").show();
+      }
+   </script>
+
+</body>
+
 
 </html>
