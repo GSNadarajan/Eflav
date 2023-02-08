@@ -1,6 +1,3 @@
-<?php
-include "libs/load.php";
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,12 +7,13 @@ include "libs/load.php";
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <!-- <link rel="stylesheet" href="assets/css.css" /> -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <title>Eflav</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
- <style>
+    <style>
     .card {
         background: rgba(255, 255, 255, 0.08);
         border-radius: 16px;
@@ -118,14 +116,4 @@ include "libs/load.php";
     </style>
 </head>
 
-   <?php 
-   include "_template/_nav.php";
-   include("category/combo.php");
-   include("category/snacks.php");
-   include("category/beverages.php");
-   include("category/popcorn.php");
-   include("_template/_scripts.php");
-
-   ?>
- 
-  
+<body style="background-color:#1a1a1a;">

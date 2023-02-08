@@ -1,13 +1,13 @@
 <section id="beverages">
     <div class="container mt-5" style="margin-top:40px !important;">
-        <h3 class="card-title">Bevarages</h3>
+        <h3 class="card-title">Popcorn</h3>
 
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-4 g-3 mt-4">
             <?php
 $db = new Unique("food","-");
-$beverages = $db->getTotalBased("cat_id", "3");
+$popcorn = $db->getTotalBased("cat_id", "2");
 
-foreach ($beverages as $key => $value) {
+foreach ($popcorn as $key => $value) {
     ?>
 
 
