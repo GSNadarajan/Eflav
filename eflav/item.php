@@ -196,56 +196,6 @@ include "libs/load.php";
                     </div>
                 </div>
 
-                <div class="col">
-                    <div class="card shadow-sm zoom car1">
-                        <div class="card-body mt-2" style="height:160px;width:100%">
-                            <img src="./images/icecream.jpg" class="img-fluid ml-5 card_img">
-
-
-                            <h3 class="mr-5" style="float:right;font-weight:bold;font-size:25px;color:white;margin-top:10px;">Icecream</h3>
-                            <br>
-                            <p class="mr-5" style="float:right;opacity:0.5;color:white;margin-top:-80px;">Price: 60rs</p>
-                            <br>
-                            <button type="button" class="btn mr-1" style="float:right;background-color:#ff2c2c;color: white;margin-top:-68px;">Add +</button>
-
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="col">
-                    <div class="card shadow-sm zoom car1">
-                        <div class="card-body mt-2" style="height:160px;width:100%">
-                            <img src="./images/puff.jpg" class="img-fluid ml-5 card_img">
-
-
-                            <h3 class="mr-5" style="float:right;font-weight:bold;font-size:25px;color:white;margin-top:10px;">Puff</h3>
-                            <br>
-                            <p class="mr-5" style="float:right;opacity:0.5;color:white;margin-top:-80px;">Price: 30rs</p>
-                            <br>
-                            <button type="button" class="btn mr-1" style="float:right;background-color:#ff2c2c;color: white;margin-top:-68px;">Add +</button>
-
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="col">
-                    <div class="card shadow-sm zoom car1">
-                        <div class="card-body mt-2" style="height:160px;width:100%">
-                            <img src="./images/roll.jpg" class="img-fluid ml-5 card_img">
-
-
-                            <h3 class="mr-5" style="float:right;font-weight:bold;font-size:25px;color:white;margin-top:10px;">Roll</h3>
-                            <br>
-                            <p class="mr-5" style="float:right;opacity:0.5;color:white;margin-top:-80px;">Price: 30rs</p>
-                            <br>
-                            <button type="button" class="btn mr-1" style="float:right;background-color:#ff2c2c;color: white;margin-top:-68px;">Add +</button>
-
-                        </div>
-                    </div>
-                </div>
-
             </div>
 
         </div>
@@ -261,55 +211,8 @@ include "libs/load.php";
 
                 <!-- first colomn -->
 
-
-                <div class="col">
-                    <div class="card shadow-sm zoom car1">
-                        <div class="card-body mt-2" style="height:160px;width:100%">
-                            <img src="./images/icecream.jpg" class="img-fluid ml-5 card_img">
-
-
-                            <h3 class="mr-5" style="float:right;font-weight:bold;font-size:25px;color:white;margin-top:10px;">Icecream</h3>
-                            <br>
-                            <p class="mr-5" style="float:right;opacity:0.5;color:white;margin-top:-80px;">Price: 60rs</p>
-                            <br>
-                            <button type="button" class="btn mr-1" style="float:right;background-color:#ff2c2c;color: white;margin-top:-68px;">Add +</button>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="card shadow-sm zoom car1">
-                        <div class="card-body mt-2" style="height:160px;width:100%">
-                            <img src="./images/icecream.jpg" class="img-fluid ml-5 card_img">
-
-
-                            <h3 class="mr-5" style="float:right;font-weight:bold;font-size:25px;color:white;margin-top:10px;">Icecream</h3>
-                            <br>
-                            <p class="mr-5" style="float:right;opacity:0.5;color:white;margin-top:-80px;">Price: 60rs</p>
-                            <br>
-                            <button type="button" class="btn mr-1" style="float:right;background-color:#ff2c2c;color: white;margin-top:-68px;">Add +</button>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="card shadow-sm zoom car1">
-                        <div class="card-body mt-2" style="height:160px;width:100%">
-                            <img src="./images/icecream.jpg" class="img-fluid ml-5 card_img">
-
-
-                            <h3 class="mr-5" style="float:right;font-weight:bold;font-size:25px;color:white;margin-top:10px;">Icecream</h3>
-                            <br>
-                            <p class="mr-5" style="float:right;opacity:0.5;color:white;margin-top:-80px;">Price: 60rs</p>
-                            <br>
-                            <button type="button" class="btn mr-1" style="float:right;background-color:#ff2c2c;color: white;margin-top:-68px;">Add +</button>
-
-                        </div>
-                    </div>
-                </div>
-
+              <?=include("category/beverages.php");?>
+            
             </div>
 
         </div>
