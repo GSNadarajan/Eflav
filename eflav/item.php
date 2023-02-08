@@ -1,356 +1,448 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+	<link rel="stylesheet" href="dist/css/styles.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <title>Eflav</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <style>
-        /* .car1{
-  background: rgba(255,255,255,0.1);
-  box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
 
-}
-.car2{
-  background: rgba(255,255,255,0.1);
-  border-radius:30px;
-  box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
-
-} */
-        
-        .card {
-            background: rgba(255, 255, 255, 0.08);
-            border-radius: 16px;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(1.5px);
-            -webkit-backdrop-filter: blur(1.5px);
-            border: 1px solid rgba(255, 255, 255, 0.41);
-        }
-        
-        @media screen and (min-width:992px) {
-            body {
-                display: none;
-            }
-        }
-        
-        @media screen and (max-width:991px) {
-            .lap-nav {
-                display: none;
-            }
-        }
-        
-        @media screen and (min-width:992px) {
-            #snacks {
-                margin-top: 90px;
-            }
-        }
-        
-        @media screen and (max-width:991px) {
-            #snacks {
-                margin-top: 40px;
-            }
-        }
-        /* #snacks{
+  .card{
+background: rgba(255, 255, 255, 0.08);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(1.5px);
+-webkit-backdrop-filter: blur(1.5px);
+border: 1px solid rgba(255, 255, 255, 0.41);
+  }
+  @media screen and (min-width:992px) {
+ body{
   display:none;
-} */
+ }
+}
+@media screen and (max-width:991px) {
+ .lap-nav{
+  display:none;
+ }
+}
+@media screen and (min-width:992px) {
+ #snacks{
+  margin-top: 90px;
+ }
+}
+@media screen and (max-width:991px) {
+ #snacks{
+  margin-top: 40px;
+ }
+}
+
+.card_img{
+  height:120px;
+  width:120px;
+  border-radius:10px;
+}
+.navbar-brand{
+    margin-left:10px;
+    color:white;
+    font-weight:bold;
+}
+.navbar{
+    background-color:#ff2c2c
+}
+.nav-img{
+    border-radius: 50%;
+    border:2px solid #ff2c2c;
+    height:55px;
+    width:55px;
+}
+.nav-text{
+    text-align:center;
+    color:white;
+}
+.nav-body{
+    text-align:center;
+}
+.card-title{
+    color:white;
+    font-weight:bold;
+}
+.cart{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color:#ff2c2c;
+  width: 50px;
+  height: 50px;
+  right:5px;
+  margin-top:5px;
+  color:white;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+}
+.icon-cart__badge {
+  position: absolute;
+  top: 3px;
+  right: 4px;
+  width: 17px;
+  height: 17px;
+  background: white;
+  color: #ff2c2c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
     </style>
 </head>
-
-<body style="background-color:#1a1a1a;">
-    <!--Laptop navbar-->
-    <div class="lap-nav">
-        <nav class="navbar navbar-expand-lg  text-uppercase fixed-top" id="mainNav" style="background-color:#ff2c2c">
-            <div class="container">
-                <a class="navbar-brand" href="#page-top" style="margin-left:10px;color:white;font-weight:bold">Eflav</a>
-                <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="fas fa-bars"></i>
-            </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3  text-white rounded" href="#popcorn">Popcorn</a></li>
-                        <li onclick="show_snacks()" class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3  text-white rounded" href="#snacks">Snacks</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 text-white rounded" href="#beverages">Bevarages</a></li>
-
-
-                    </ul>
-                </div>
-            </div>
+<body  style="background-color:#1a1a1a;">
+ 
+       <!--Mobile navbar-->
+        <div class="mob-nav">
+       <nav class="navbar navbar-expand-lg text-uppercase fixed-top" id="mainNav">
+             <div class="container"> 
+                <a class="navbar-brand">Eflav</a>
+                <!-- <p class="text-white mt-2">HEllo</p> -->
+                
+                 <button type="button" class="cart">
+                 <span><i class="bi bi-cart-fill" style="font-size:25px;color:white;margin-right:8px;"></i></span> 
+                 <span class="icon-cart__badge">2</span>
+  </button>
+            </div> 
         </nav>
-    </div>
-    <!--Mobile navbar-->
-    <div class="mob-nav">
-        <nav class="navbar navbar-expand-lg  text-uppercase fixed-top" id="mainNav" style="background-color:#ff2c2c">
-            <div class="container">
-                <a class="navbar-brand" href="#page-top" style="margin-left:10px;color:white;font-weight:bold">Eflav</a>
-            </div>
-        </nav>
-
-        <nav class="nav scrollmenu" style="margin-top: 70px;">
-            <div class="" style="text-align:center;">
-                <a class="nav-link text-white" onclick="showOrHideDiv()"><img src="./images/bevarages.jpg" height="65px;" width="65px" style="border-radius: 50%;border:2px solid #ff2c2c"></a>
-                <span class="text-white" style="text-align:center;">Combo</span>
-            </div>
-            <!-- <div class="" style="text-align:center;">
-            <a class="nav-link text-white" onclick="show_all()"><img src="./images/bevarages.jpg" height="65px;" width="65px" style="border-radius: 50%;border:2px solid #ff2c2c"></a>
-            <span class="text-white" style="text-align:center;">All</span>
+        
+        <nav class="nav scrollmenu" style="margin-top: 80px;">
+          <div class="nav-body" >
+            <a class="nav-link text-white" onclick="show_combo()"><img class="nav-img" src="./images/bevarages.jpg" ></a>
+            <span class="nav-text">Combo</span>
           </div>
-          <div class="" style="text-align:center;">
-          <a class="nav-link text-white" onclick="show_bevarges()"><img src="./images/bevarages.jpg" height="65px;" width="65px" style="border-radius: 50%;border:2px solid #ff2c2c"></a>
-          <span class="text-white" style="text-align:center;">Bevarages</span>
-        </div> -->
-            <div class="" style="text-align:center;">
-                <a onclick="show_snacks()" class="nav-link text-white"><img src="./images/snacks.jpg" height="65px;" width="65px" style="border-radius: 50%;border:2px solid #ff2c2c"></a>
-                <span class="text-white" style="text-align:center;">Snacks</span>
-            </div>
-            <div class="" style="text-align:center;">
-                <a onclick="show_popcorn()" class="nav-link text-white"><img src="./images/popcorn.jpg" height="65px;" width="65px" style="border-radius: 50%;border:2px solid #ff2c2c"></a>
-                <span class="text-white" style="text-align:center;">Popcorns</span>
-            </div>
+          <div class="nav-body">
+          <a class="nav-link text-white" onclick="show_bevarges()"><img class="nav-img" src="./images/bevarages.jpg" ></a>
+          <span class="nav-text" >Bevarages</span>
+        </div>
+        <div class="nav-body">
+          <a onclick="show_snacks()" class="nav-link text-white "><img class="nav-img" src="./images/snacks.jpg"></a>
+          <span class="nav-text">Snacks</span>
+        </div>
+        <div class="nav-body">
+          <a onclick="show_popcorn()" class="nav-link text-white"><img class="nav-img" src="./images/popcorn.jpg"></a>
+          <span class="nav-text">Popcorns</span>
+        </div>
         </nav>
-    </div>
+        <span style="color:rgba(255, 255, 255, 2);font-size:10px;"> <hr/> </span>
+        </div>
+       
+        
+        <section id="combo"   >
+          <div class="container mt-2" style="margin-top:30px !important;" >
+            <h3 class="card-title">Combo</h3>
+      
+              <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-4 g-3 mt-3">
+            
+              <div class="col">
+                  <div class="card shadow-sm zoom car1" data-aos="zoom-in">
+                  <div class="card-body mt-2" style="height:230px;width:100%" >
+                    <div style="text-align: center;padding:10px">
+                    <img src="./images/roll.jpg" class="img-fluid ml-5 card_img">
+                    <span style="color:white;padding:5px;"> + </span>
+                    <img src="./images/icecream.jpg" class="img-fluid ml-5 card_img">
+                    </div> 
+        
+                    <div style="text-align:left;">
+                      <h3 class="mr-5 " style="font-weight:bold;font-size:25px;color:white;margin-top:10px;"  >Roll + Icecream</h3>
+                      <br>
+                      <h6  class="" style="color:white;margin-top:-30px;" ><s>Rs:110/</s><bold>&nbsp;&nbsp;Rs:100/-</bold>  </h6>
+                      <br>
+                      
+                    </div>
+                    <button type="button" class="btn mr-1" style="float:right;background-color:#ff2c2c;color:white;margin-top:-68px;">Add +</button>
 
-    <section id="combos">
-        <div class="container mt-2" style="margin-top:40px !important;">
-            <h3 style="color:white;font-weight:bold">Combo</h3>
+                    </div>
+                  </div>
+                </div>
 
+                <div class="col">
+                  <div class="card shadow-sm zoom car1" data-aos="zoom-in">
+                  <div class="card-body mt-2" style="height:230px;width:100%" >
+                    <div style="text-align: center;padding:10px">
+                    <img src="./images/roll.jpg" class="img-fluid ml-5 card_img">
+                    <span style="color:white;padding:5px;"> + </span>
+                    <img src="./images/icecream.jpg" class="img-fluid ml-5 card_img">
+                    </div> 
+        
+                    <div style="text-align:left;">
+                      <h3 class="mr-5 " style="font-weight:bold;font-size:25px;color:white;margin-top:10px;"  >Roll + Icecream</h3>
+                      <br>
+                      <h6  class="" style="color:white;margin-top:-30px;" ><s>Rs:110/</s><bold>&nbsp;&nbsp;Rs:100/-</bold>  </h6>
+                      <br>
+                      
+                    </div>
+                    <button type="button" class="btn mr-1" style="float:right;background-color:#ff2c2c;color:white;margin-top:-68px;">Add +</button>
+
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="card shadow-sm zoom car1" data-aos="zoom-in">
+                  <div class="card-body mt-2" style="height:230px;width:100%" >
+                    <div style="text-align: center;padding:10px">
+                    <img src="./images/roll.jpg" class="img-fluid ml-5 card_img">
+                    <span style="color:white;padding:5px;"> + </span>
+                    <img src="./images/icecream.jpg" class="img-fluid ml-5 card_img">
+                    </div> 
+        
+                    <div style="text-align:left;">
+                      <h3 class="mr-5 " style="font-weight:bold;font-size:25px;color:white;margin-top:10px;"  >Roll + Icecream</h3>
+                      <br>
+                      <h6  class="" style="color:white;margin-top:-30px;" ><s>Rs:110/</s><bold>&nbsp;&nbsp;Rs:100/-</bold>  </h6>
+                      <br>
+                      
+                    </div>
+                    <button type="button" class="btn mr-1" style="float:right;background-color:#ff2c2c;color:white;margin-top:-68px;">Add +</button>
+
+                    </div>
+                  </div>
+                </div>
+      
+      
+                  </div>
+             
+            </div>
+          
+          </section>
+      
+    <section id="snacks" >
+      <div class="container mt-2" style="margin-top:50px !important;" >
+      <h3  class="card-title">Snacks</h3>
+
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 g-3 mt-3">
+        
+
+                <div class="col">
+                  <div class="card shadow-sm zoom" >
+                  <div class="card-body mt-2" style="height:160px;width:100%" >
+                    <img src="./images/popcorn.jpg" class="img-fluid ml-5 card_img" >
+        
+                   
+                      <h3 class="mr-5" style="float:right;font-weight:bold;font-size:25px;color:white;margin-top:10px;"  >Popcorn</h3>
+                      <br>
+                      <p  class="mr-5" style="float:right;opacity:0.5;color:white;margin-top:-80px;" >Price: 50rs</p>
+                      <br>
+                      <button type="button" class="btn mr-1" style="float:right;background-color:#ff2c2c;color: white;margin-top:-68px;">Add +</button>
+
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="col">
+                  <div class="card shadow-sm zoom car1" >
+                  <div class="card-body mt-2" style="height:160px;width:100%" >
+                    <img src="./images/icecream.jpg" class="img-fluid ml-5 card_img">
+        
+                   
+                      <h3 class="mr-5" style="float:right;font-weight:bold;font-size:25px;color:white;margin-top:10px;"  >Icecream</h3>
+                      <br>
+                      <p  class="mr-5" style="float:right;opacity:0.5;color:white;margin-top:-80px;" >Price: 60rs</p>
+                      <br>
+                      <button type="button" class="btn mr-1" style="float:right;background-color:#ff2c2c;color: white;margin-top:-68px;">Add +</button>
+
+                    </div>
+                  </div>
+                </div>
+  
+  
+                <div class="col">
+                  <div class="card shadow-sm zoom car1" >
+                  <div class="card-body mt-2" style="height:160px;width:100%" >
+                    <img src="./images/puff.jpg" class="img-fluid ml-5 card_img">
+        
+                   
+                      <h3 class="mr-5" style="float:right;font-weight:bold;font-size:25px;color:white;margin-top:10px;"  >Puff</h3>
+                      <br>
+                      <p  class="mr-5" style="float:right;opacity:0.5;color:white;margin-top:-80px;" >Price: 30rs</p>
+                      <br>
+                      <button type="button" class="btn mr-1" style="float:right;background-color:#ff2c2c;color: white;margin-top:-68px;">Add +</button>
+
+                    </div>
+                  </div>
+                </div>
+  
+  
+                 <div class="col">
+                  <div class="card shadow-sm zoom car1">
+                  <div class="card-body mt-2" style="height:160px;width:100%" >
+                    <img src="./images/roll.jpg" class="img-fluid ml-5 card_img" >
+        
+                   
+                      <h3 class="mr-5" style="float:right;font-weight:bold;font-size:25px;color:white;margin-top:10px;"  >Roll</h3>
+                      <br>
+                      <p  class="mr-5" style="float:right;opacity:0.5;color:white;margin-top:-80px;" >Price: 30rs</p>
+                      <br>
+                      <button type="button" class="btn mr-1" style="float:right;background-color:#ff2c2c;color: white;margin-top:-68px;">Add +</button>
+
+                    </div>
+                  </div>
+                </div>
+  
+             </div>
+         
+        </div>
+      
+    </section>
+
+     <section id="beverages">
+
+      <div class="container mt-5" style="margin-top:40px !important;">
+      <h3 class="card-title">Bevarages</h3>
+
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-4 g-3 mt-4">
+        
+          <!-- first colomn -->
+            
+                      
+          <div class="col">
+            <div class="card shadow-sm zoom car1">
+            <div class="card-body mt-2" style="height:160px;width:100%" >
+              <img src="./images/icecream.jpg" class="img-fluid ml-5 card_img">
+  
+             
+                <h3 class="mr-5" style="float:right;font-weight:bold;font-size:25px;color:white;margin-top:10px;"  >Icecream</h3>
+                <br>
+                <p  class="mr-5" style="float:right;opacity:0.5;color:white;margin-top:-80px;" >Price: 60rs</p>
+                <br>
+                <button type="button" class="btn mr-1" style="float:right;background-color:#ff2c2c;color: white;margin-top:-68px;">Add +</button>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card shadow-sm zoom car1">
+            <div class="card-body mt-2" style="height:160px;width:100%" >
+              <img src="./images/icecream.jpg" class="img-fluid ml-5 card_img" >
+  
+             
+                <h3 class="mr-5" style="float:right;font-weight:bold;font-size:25px;color:white;margin-top:10px;"  >Icecream</h3>
+                <br>
+                <p  class="mr-5" style="float:right;opacity:0.5;color:white;margin-top:-80px;" >Price: 60rs</p>
+                <br>
+                <button type="button" class="btn mr-1" style="float:right;background-color:#ff2c2c;color: white;margin-top:-68px;">Add +</button>
+
+              </div>
+            </div>
+          </div>
+
+            <div class="col">
+                  <div class="card shadow-sm zoom car1">
+                  <div class="card-body mt-2" style="height:160px;width:100%" >
+                    <img src="./images/icecream.jpg" class="img-fluid ml-5 card_img">
+        
+                   
+                      <h3 class="mr-5" style="float:right;font-weight:bold;font-size:25px;color:white;margin-top:10px;"  >Icecream</h3>
+                      <br>
+                      <p  class="mr-5" style="float:right;opacity:0.5;color:white;margin-top:-80px;" >Price: 60rs</p>
+                      <br>
+                      <button type="button" class="btn mr-1" style="float:right;background-color:#ff2c2c;color: white;margin-top:-68px;">Add +</button>
+
+                    </div>
+                  </div>
+                </div>
+  
+             </div>
+         
+        </div>
+      
+    </section>
+     <section id="popcorn"   >
+        <div class="container mt-2" style="margin-top:40px !important;" >
+          <h3 class="card-title">Popcorns</h3>
+    
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-4 g-3 mt-3">
-
-                <div class="col">
-                    <div class="card shadow-sm zoom car1">
-                        <div class="card-body mt-2" style="height:230px;width:100%">
-                            <div style="text-align: center;padding:10px">
-                                <img src="./images/popcorn.jpg" class="img-fluid ml-5" style="height:120px;width:120px;border-radius:10px;">
-                                <span style="color:white;padding:5px;"> + </span>
-                                <img src="./images/puff.jpg" class="img-fluid ml-5" style="height:120px;width:120px;border-radius:10px;">
-                            </div>
-
-                            <div style="text-align: center;">
-                                <h3 class="mr-5" style="font-weight:bold;font-size:25px;color:white;margin-top:10px;">Popcorn + Puff</h3>
-                                <br>
-                                <h6 class="" style="color:white;margin-top:-30px;"><s>Rs:110/</s>
-                                    <bold>&nbsp;&nbsp;Rs:100/-</bold>
-                                </h6>
-                                <br>
-
-                            </div>
-                            <button type="button" class="btn mr-1" style="float:right;background-color:#ff2c2c;color:white;margin-top:-68px;">Add +</button>
-
-                        </div>
-                    </div>
+          
+              <div class="col">
+                <div class="card shadow-sm zoom car1">
+                <div class="card-body mt-2" style="height:160px;width:100%" >
+                  <img src="./images/popcorn.jpg" class="img-fluid ml-5 card_img">
+      
+                 
+                    <h3 class="mr-5" style="float:right;font-weight:bold;font-size:25px;color:white;margin-top:10px;"  >Popcorn</h3>
+                    <br>
+                    <p  class="mr-5" style="float:right;opacity:0.5;color:white;margin-top:-80px;" >Price: 50rs</p>
+                    <br>
+                    <button type="button" class="btn mr-1" style="float:right;background-color:#ff2c2c;color:white;margin-top:-68px;">Add +</button>
+    
+                  </div>
                 </div>
-
-                <div class="col">
-                    <div class="card shadow-sm zoom car1">
-                        <div class="card-body mt-2" style="height:260px;width:100%">
-                            <div style="text-align: center;padding:10px">
-                                <img src="./images/popcorn.jpg" class="img-fluid ml-5" style="height:120px;width:120px;border-radius:10px;">
-                                <span style="color:white;padding:5px;"> + </span>
-                                <img src="./images/puff.jpg" class="img-fluid ml-5" style="height:120px;width:120px;border-radius:10px;">
-                            </div>
-
-                            <div style="text-align: center;">
-                                <h3 class="mr-5" style="font-weight:bold;font-size:25px;color:white;margin-top:10px;">Popcorn + Puff</h3>
-                                <br>
-                                <p class="" style="opacity:0.5;color:white;margin-top:-30px;">Price: 50rs + 30rs</p>
-                                <br>
-                                <p class="" style="opacity:0.5;color:white;margin-top:-40px;">Total: 80rs</p>
-                                <br>
-                            </div>
-                            <button type="button" class="btn mr-1" style="float:right;background-color:#ff2c2c;color:white;margin-top:-78px;">Add +</button>
-
-                        </div>
-                    </div>
+              </div>
+    
+    
                 </div>
+           
+          </div>
+        
+        </section>
+    
+      
 
+    <script>
+      function show_snacks() {
+        $("#snacks").show();
+        $("#beverages").hide();
+        $("#popcorn").hide();
+        $("#combo").hide();
+      }
+      function show_popcorn(){
+        $("#popcorn").show();
+        $("#snacks").hide();
+        $("#beverages").hide();
+        $("#combo").hide();
+      }
+  
+      function show_bevarges(){
+        $("#beverages").show();
+        $("#snacks").hide();
+        $("#combo").hide();
+        $("#popcorn").hide();
+      }
+    
+      function show_combo(){
+        $("#combo").show();
+        $("#popcorn").hide();
+        $("#snacks").hide();
+        $("#beverages").hide();
+      }
+      
+   </script>
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
 
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<!-- <script src="http://localhost:3002/dist/aos.js"></script> -->
 
-            </div>
+<script>
+  AOS.init({
+    easing: 'ease-out-back',
+    duration: 1000
+  });
+</script>
 
-        </div>
+<script>
+  hljs.initHighlightingOnLoad();
 
-    </section>
-
-    <section id="snacks">
-        <div class="container mt-2" style="margin-top:50px !important;">
-            <h3 style="color:white;font-weight:bold">Snacks</h3>
-
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 g-3 mt-3">
-
-
-                <div class="col">
-                    <div class="card shadow-sm zoom">
-                        <div class="card-body mt-2" style="height:160px;width:100%">
-                            <img src="./images/popcorn.jpg" class="img-fluid ml-5" style="height:120px;width:120px;border-radius:10px;">
-
-
-                            <h3 class="mr-5" style="float:right;font-weight:bold;font-size:25px;color:white;margin-top:10px;">Popcorn</h3>
-                            <br>
-                            <p class="mr-5" style="float:right;opacity:0.5;color:white;margin-top:-80px;">Price: 50rs</p>
-                            <br>
-                            <button type="button" class="btn mr-1" style="float:right;background-color:#ff2c2c;color: white;margin-top:-68px;">Add +</button>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="card shadow-sm zoom car1">
-                        <div class="card-body mt-2" style="height:160px;width:100%">
-                            <img src="./images/icecream.jpg" class="img-fluid ml-5" style="height:120px;width:120px;border-radius:10px;">
-
-
-                            <h3 class="mr-5" style="float:right;font-weight:bold;font-size:25px;color:white;margin-top:10px;">Icecream</h3>
-                            <br>
-                            <p class="mr-5" style="float:right;opacity:0.5;color:white;margin-top:-80px;">Price: 60rs</p>
-                            <br>
-                            <button type="button" class="btn mr-1" style="float:right;background-color:#ff2c2c;color: white;margin-top:-68px;">Add +</button>
-
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="col">
-                    <div class="card shadow-sm zoom car1">
-                        <div class="card-body mt-2" style="height:160px;width:100%">
-                            <img src="./images/puff.jpg" class="img-fluid ml-5" style="height:120px;width:120px;border-radius:60px;">
-
-
-                            <h3 class="mr-5" style="float:right;font-weight:bold;font-size:25px;color:white;margin-top:10px;">Puff</h3>
-                            <br>
-                            <p class="mr-5" style="float:right;opacity:0.5;color:white;margin-top:-80px;">Price: 30rs</p>
-                            <br>
-                            <button type="button" class="btn mr-1" style="float:right;background-color:#ff2c2c;color: white;margin-top:-68px;">Add +</button>
-
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="col">
-                    <div class="card shadow-sm zoom car1">
-                        <div class="card-body mt-2" style="height:160px;width:100%">
-                            <img src="./images/roll.jpg" class="img-fluid ml-5" style="height:120px;width:120px;border-radius:10px;">
-
-
-                            <h3 class="mr-5" style="float:right;font-weight:bold;font-size:25px;color:white;margin-top:10px;">Roll</h3>
-                            <br>
-                            <p class="mr-5" style="float:right;opacity:0.5;color:white;margin-top:-80px;">Price: 30rs</p>
-                            <br>
-                            <button type="button" class="btn mr-1" style="float:right;background-color:#ff2c2c;color: white;margin-top:-68px;">Add +</button>
-
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <section id="beverages">
-
-        <div class="container mt-5" style="margin-top:40px !important;">
-            <h3 style="color:white;font-weight:bold">Bevarages</h3>
-
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-4 g-3 mt-4">
-
-                <!-- first colomn -->
-
-
-                <div class="col">
-                    <div class="card shadow-sm zoom car1">
-                        <div class="card-body mt-2" style="height:160px;width:100%">
-                            <img src="./images/icecream.jpg" class="img-fluid ml-5" style="height:120px;width:120px;border-radius:10px;">
-
-
-                            <h3 class="mr-5" style="float:right;font-weight:bold;font-size:25px;color:white;margin-top:10px;">Icecream</h3>
-                            <br>
-                            <p class="mr-5" style="float:right;opacity:0.5;color:white;margin-top:-80px;">Price: 60rs</p>
-                            <br>
-                            <button type="button" class="btn mr-1" style="float:right;background-color:#ff2c2c;color: white;margin-top:-68px;">Add +</button>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="card shadow-sm zoom car1">
-                        <div class="card-body mt-2" style="height:160px;width:100%">
-                            <img src="./images/icecream.jpg" class="img-fluid ml-5" style="height:120px;width:120px;border-radius:10px;">
-
-
-                            <h3 class="mr-5" style="float:right;font-weight:bold;font-size:25px;color:white;margin-top:10px;">Icecream</h3>
-                            <br>
-                            <p class="mr-5" style="float:right;opacity:0.5;color:white;margin-top:-80px;">Price: 60rs</p>
-                            <br>
-                            <button type="button" class="btn mr-1" style="float:right;background-color:#ff2c2c;color: white;margin-top:-68px;">Add +</button>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="card shadow-sm zoom car1">
-                        <div class="card-body mt-2" style="height:160px;width:100%">
-                            <img src="./images/icecream.jpg" class="img-fluid ml-5" style="height:120px;width:120px;border-radius:10px;">
-
-
-                            <h3 class="mr-5" style="float:right;font-weight:bold;font-size:25px;color:white;margin-top:10px;">Icecream</h3>
-                            <br>
-                            <p class="mr-5" style="float:right;opacity:0.5;color:white;margin-top:-80px;">Price: 60rs</p>
-                            <br>
-                            <button type="button" class="btn mr-1" style="float:right;background-color:#ff2c2c;color: white;margin-top:-68px;">Add +</button>
-
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-    <section id="popcorn">
-        <div class="container mt-2" style="margin-top:40px !important;">
-            <h3 style="color:white;font-weight:bold">Popcorns</h3>
-
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-4 g-3 mt-3">
-
-                <script>
-                    function show_snacks() {
-                        $("#snacks").show();
-                        $("#beverages").hide();
-                        $("#popcorn").hide();
-                    }
-
-                    function show_popcorn() {
-                        $("#popcorn").show();
-                        $("#snacks").hide();
-                        $("#beverages").hide();
-                    }
-
-                    function show_bevarges() {
-                        $("#bevarages").show();
-                        $("#snacks").hide();
-                        $("#popcorn").hide();
-                    }
-
-                    function show_all() {
-                        $("#popcorn").show();
-                        $("#snacks").show();
-                        $("#beverages").show();
-                    }
-                </script>
-
+  $('.hero__scroll').on('click', function(e) {
+    $('html, body').animate({
+      scrollTop: $(window).height()
+    }, 1200);
+  });
+</script>
 </body>
 
 
