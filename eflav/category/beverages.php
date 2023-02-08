@@ -27,7 +27,7 @@ foreach ($beverages as $key => $value) {
                         <h6 class="" style="float:right;opacity:1;color:white;margin-top:-75px;">
                             <s>Rs:<?=$price[0]?>/</s>
                             <bold>&nbsp;&nbsp;Rs:<?=$price[1]?>/-</bold> <br>
-                            <button type="button" class="btn mr-1"
+                            <button onclick="add_item('3',<?=$value['id']?>)" type="button" class="btn mr-1"
                                 style="float:right;background-color:#ff2c2c;color: white;margin-top:18px;">Add
                                 +</button>
 

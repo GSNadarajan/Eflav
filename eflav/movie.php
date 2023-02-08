@@ -5,7 +5,7 @@ include "_template/_header.php";
 
 // get the name and number 
 
-if (Session::isset("number") && Session::isset("name")) {
+if (isset($_POST['name'])) {
     $name = Filter::input($_POST['name']);
     $number = Filter::input($_POST['number']);
     Session::set("name", $name);
