@@ -47,13 +47,13 @@ if (isset($_POST['name'])) {
 
                         <div class="mb-1">
                             <label for="exampleInputEmail1" class="form-label text-white mt-3">Enter movie time</label>
-                            <input type="text" class="form-control" name="movie_time" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            <input type="text" class="form-control" name="movie_time" id="exampleInputEmail1" aria-describedby="emailHelp" required>
                             <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
                         </div>
 
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label text-white mt-3">Enter sear number</label>
-                            <input type="text" class="form-control" name="seat_number" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            <input type="text" class="form-control" name="seat_number" id="exampleInputEmail1" aria-describedby="emailHelp" required>
                             <div id="emailHelp" class="form-text note-text text-white"> NOTE : Kindly be there in the exact seat number to help us deliver foods on time.</div>
                         </div>
 
