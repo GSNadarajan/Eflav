@@ -42,10 +42,6 @@
 
         </div>
 
-
-
-
-
     </main>
 
     <?= include("_template/_scripts.php") ?>

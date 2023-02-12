@@ -7,6 +7,7 @@ if(isset($_POST['name'])){
     $count = 1;
 
     if(isset($_SESSION["$data"])){
+        session::set("add",1);
         $count = Session::get($data) + 1;
         Session::set($data,$count);
     }
