@@ -27,9 +27,14 @@ foreach ($beverages as $key => $value) {
                         <h6 class="" style="float:right;opacity:1;color:white;margin-top:-75px;">
                             <s>Rs:<?=$price[0]?>/</s>
                             <bold>&nbsp;&nbsp;Rs:<?=$price[1]?>/-</bold> <br>
-                            <button onclick="add_item('3',<?=$value['id']?>)" type="button" class="btn mr-1"
+                            <div  style="float:right;;color: white;margin-top:18px;display:none">
+                            <button onclick="totalclick(-1)">-</button>
+                            <span id="totalclicks">0</span>
+                            <button onclick="totalclick(1)">+</button>
+                            </div>
+                            <button onclick="" onclick="add_item('3',<?=$value['id']?>)" type="button" class="btn mr-1"
                                 style="float:right;background-color:#ff2c2c;color: white;margin-top:18px;">Add
-                                +</button>
+                                </button>
 
                     </div>
                 </div>
@@ -42,3 +47,15 @@ foreach ($beverages as $key => $value) {
         </div>
     </div>
 </section>
+<script>
+    function totalclick(click) {
+     const totalclicks = document.getElementById('totalclicks');
+     const sumvalue = parseInt(totalclicks.innerText) + click;
+     totalclicks.innerText = sumvalue;
+
+     if(sumvalue < 0){
+        totalclicks.innerText = 0;
+     }
+    } 
+    
+</script>

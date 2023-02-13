@@ -25,6 +25,17 @@ function add_item(category,id){
             alert("Error in session");
         }
     });
+
+    function totalclick(click) {
+        const totalclicks = document.getElementById('totalclicks');
+        const sumvalue = parseInt(totalclicks.innerText) + click;
+        totalclicks.innerText = sumvalue;
+   
+        if(sumvalue < 0){
+           totalclicks.innerText = 0;
+        }
+       } 
+       
 }
 
 function increment(){
