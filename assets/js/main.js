@@ -1,4 +1,4 @@
-localStorage.clear()
+// localStorage.clear()
 function redirect() {
     window.location = "order.php";
 }
@@ -34,5 +34,10 @@ function increment(){
     console.log("Recent_value : ",recent_value)
     console.log("Update_value : ",updated_value)
     localStorage.setItem("count",updated_value)
+    $("#cart_value").text(updated_value)
+}
+
+if(localStorage.getItem("count")){
+    var updated_value = localStorage.getItem("count");
     $("#cart_value").text(updated_value)
 }

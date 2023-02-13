@@ -10,10 +10,12 @@ if(isset($_POST['name'])){
         Session::set("add",1);
         $count = Session::get($data) + 1;
         Session::set($data,$count);
+        Session::set("count",$count);
     }
 
     Session::set("add",1);
     Session::set($data,$count);
+    Session::set("count",$count);
 
     $json['success'] = true;
     $json['name'] = $data;
