@@ -5,7 +5,7 @@
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-4 g-3 mt-4">
             <?php
 $db = new Unique("food","-");
-$snacks = $db->getTotalBased("cat_id", "1");
+$snacks = $db->getTotalBased("type_id", "4");
 
 foreach ($snacks as $key => $value) {
     ?>
@@ -27,7 +27,7 @@ foreach ($snacks as $key => $value) {
                         <h6 class="" style="float:right;opacity:1;color:white;margin-top:-75px;">
                             <s>Rs:<?=$price[0]?>/</s>
                             <bold>&nbsp;&nbsp;Rs:<?=$price[1]?>/-</bold> <br>
-                            <button onclick="add_item('1',<?=$value['id']?>)" type="button" class="btn mr-1"
+                            <button onclick="add_item('4',<?=$value['id']?>)" type="button" class="btn mr-1"
                                 style="float:right;background-color:#ff2c2c;color: white;margin-top:18px;">Add
                                 +</button>
 

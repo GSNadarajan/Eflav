@@ -5,7 +5,7 @@
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-4 g-3 mt-4">
             <?php
             $db = new Unique("food", "-");
-            $popcorn = $db->getTotalBased("cat_id", "2");
+            $popcorn = $db->getTotalBased("type_id", "2");
 
             foreach ($popcorn as $key => $value) {
             ?>

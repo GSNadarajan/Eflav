@@ -5,7 +5,7 @@
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-4 g-3 mt-3">
             <?php
             $db = new Unique("food", "-");
-            $combo = $db->getTotalBased("cat_id", "4");
+            $combo = $db->getTotalBased("type_id", "1");
             foreach ($combo as $key => $value) {
             ?>
 
@@ -33,7 +33,7 @@
                                 <br>
 
                             </div>
-                            <button type="button" onclick="add_item('4',<?=$value['id']?>)" class="btn mr-1" style="float:right;background-color:#ff2c2c;color:white;margin-top:-68px;">Add +</button>
+                            <button type="button" onclick="add_item('1',<?=$value['id']?>)" class="btn mr-1" style="float:right;background-color:#ff2c2c;color:white;margin-top:-68px;">Add +</button>
 
                         </div>
                     </div>
