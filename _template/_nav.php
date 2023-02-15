@@ -3,7 +3,7 @@
         <nav class="navbar navbar-expand-lg text-uppercase fixed-top" id="mainNav">
             <div class="container">
                 <a href="item.php
-                " class="navbar-brand">Eflav</a>
+                " class="navbar-brand">Eflavv</a>
                 <!-- <p class="text-white mt-2">HEllo</p> -->
 
                 <a href="cart.php">

@@ -129,7 +129,7 @@ include "libs/load.php";
 
 <?php
 
-include "_template/_nav.php";
+include "_template/_cartnav.php";
 
 if (isset($_GET['order_placed'])) {
     ?>
@@ -168,6 +168,7 @@ localStorage.clear()
 } else {
     if (Session::isset("add")) {
 ?>
+<<<<<<< HEAD:cart.php
         <div class="container mt-5">
             <div class="row" style="margin: 34px;">
                 <table class="table">
@@ -180,6 +181,20 @@ localStorage.clear()
                         </tr>
                     </thead>
                     <tbody>
+=======
+    <div class="container mt-5">
+        <div class="row" style="margin-top:100px !important;">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">S.no</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">Qty</th>
+                        <th scope="col">Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+>>>>>>> 420ab2b (added ajax):eflav/cart.php
 
                         <?php
                         $final_amount = [];
