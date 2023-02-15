@@ -1,5 +1,9 @@
 <?php
 include "libs/load.php";
+if(isset($_POST['seat_number']))
+    $movie_id = $_POST['movie_name'];
+    $movie_time = $_POST['movie_time'];
+    $s_number  = $_POST['seat_number'];
 ?>
 
 <!DOCTYPE html>
@@ -121,10 +125,10 @@ include "libs/load.php";
    <?php 
    
    include "_template/_nav.php";
-   include("category/combo.php");
-   include("category/snacks.php");
+//    include("category/combo.php");
+//    include("category/snacks.php");
    include("category/beverages.php");
-   include("category/popcorn.php");
+//    include("category/popcorn.php");
    include("_template/_scripts.php");
 
    ?>

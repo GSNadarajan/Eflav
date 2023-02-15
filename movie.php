@@ -33,10 +33,10 @@ if (isset($_POST['name'])) {
                     <div class="mb-1">
 
                         <label for="exampleInputEmail1" class="form-label text-white mt-3">Select movie</label>
-                        <select class="form-select" aria-label="Default select example">
+                        <select name="movie_name" class="form-select" aria-label="Default select example">
                             <option selected>Open this select movie</option>
-                            <option value="varisu">Varisu</option>
-                            <option value="thunivu">Thunivu</option>
+                            <option value="Varisu">Varisu</option>
+                            <option value="Thunivu">Thunivu</option>
                             <option value="KGF">KGF</option>
                         </select>
                     </div>

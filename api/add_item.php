@@ -13,7 +13,7 @@ if(isset($_POST['name'])){
         Session::set("count",$count);
     }
 
-    Session::set("add",1);
+    Session::set("add",TRUE);
     Session::set($data,$count);
     Session::set("count",$count);
 
