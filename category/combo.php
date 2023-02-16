@@ -19,12 +19,12 @@
                                 $price = explode(",", $value['price'])
                                 ?>
                                 <img src="<?= $images[0] ?>" class="img-fluid ml-5 card_img">
-                                <span style="color:white;padding:5px;"> + </span>
-                                <img src="<?= $images[1] ?>" class="img-fluid ml-5 card_img">
+                                <!-- <span style="color:white;padding:5px;"> + </span>
+                                <img src="<?= $images[1] ?>" class="img-fluid ml-5 card_img"> -->
                             </div>
 
                             <div style="text-align:left;">
-                                <h3 class="mr-5 " style="font-weight:bold;font-size:25px;color:white;margin-top:10px;">
+                                <h3 class="mr-5 " style="font-weight:bold;font-size:15px;color:white;margin-top:10px;">
                                     <?= ucfirst($value['name']) ?></h3>
                                 <br>
                                 <h6 class="" style="color:white;margin-top:-30px;"><s>Rs:<?= $price[0] ?>/</s>

@@ -21,7 +21,7 @@ foreach ($snacks as $key => $value) {
                     ?>
 
                         <h3 class="mr-5"
-                            style="float:right;font-weight:bold;font-size:25px;color:white;margin-top:10px;">
+                            style="float:right;font-weight:bold;font-size:15px;color:white;margin-top:10px;">
                             <?=$value['name']?></h3>
                         <br>
                         <h6 class="" style="float:right;opacity:1;color:white;margin-top:-75px;">

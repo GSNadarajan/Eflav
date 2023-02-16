@@ -126,7 +126,7 @@ if(isset($_POST['seat_number']))
    
    include "_template/_nav.php";
    include("category/combo.php");
-   include("category/beverages.php");
+   include("category/beverages_final.php");
    include("category/popcorn.php");
    include("category/snacks.php");
    include("_template/_scripts.php");

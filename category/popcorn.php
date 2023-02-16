@@ -19,7 +19,7 @@
                             $price = explode(",", $value['price'])
                             ?>
 
-                            <h3 class="mr-5" style="float:right;font-weight:bold;font-size:20px;color:white;margin-top:10px;">
+                            <h3 class="mr-5" style="float:right;font-weight:bold;font-size:15px;color:white;margin-top:10px;">
                                 <?= $value['name'] ?></h3>
                             <br>
                             <h6 class="" style="float:right;opacity:1;color:white;margin-top:-75px;">
