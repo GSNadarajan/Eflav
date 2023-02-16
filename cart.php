@@ -129,7 +129,7 @@ include "libs/load.php";
 
 <?php
 
-include "_template/_nav.php";
+include "_template/_cartnav.php";
 
 if (isset($_GET['order_placed'])) {
 ?>
@@ -239,9 +239,19 @@ if (isset($_GET['order_placed'])) {
 
         </div>
 
-<?php
+    <?php
     } else {
-        echo "no product added";
+    ?>
+        <div class="" style="margin-top:40vh">
+            <center>
+                <img src="https://nattu.me/ram/images/oops.gif" alt="Girl in a jacket" width="100" height="100">
+
+            </center>
+            <h3 class="mr-5" style="font-weight:bold;font-size:25px;color:white;text-align:center;margin-top:40px"> Go back to
+                order</h3>
+        </div>
+<?php
+
     }
 }
 include "_template/_scripts.php";

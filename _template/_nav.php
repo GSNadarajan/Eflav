@@ -1,4 +1,4 @@
-<body style="background-color:#1a1a1a;">
+<body style="background-color:#1a1a1a;font-family: cursive;">
     <div class="mob-nav">
         <nav class="navbar navbar-expand-lg text-uppercase fixed-top" id="mainNav">
             <div class="container">
