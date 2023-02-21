@@ -33,7 +33,7 @@ class Unique
             $this->conn = Database::getConnection();
         }
         $query = "SELECT `$var` FROM `$this->table_name` WHERE `id` = $this->id"; // phone number removed
-        console::log($query);
+        // console::log($query);
         $result = $this->conn->query($query) or die($this->conn->error);
         //print_r(mysqli_fetch_all($result));
         if (mysqli_num_rows($result)) {

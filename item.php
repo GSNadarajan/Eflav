@@ -1,9 +1,17 @@
 <?php
 include "libs/load.php";
+if(isset($_SESSION["order"])){
+    
+    Console::log("destroyed");
+    $destroyed = "1";
+    Session::destroy();
+}
+
 if(isset($_POST['seat_number']))
     $movie_id = $_POST['movie_name'];
     $movie_time = $_POST['movie_time'];
     $s_number  = $_POST['seat_number'];
+    Session::set("seat_number",$s_number);
 ?>
 
 <!DOCTYPE html>
@@ -17,6 +25,8 @@ if(isset($_POST['seat_number']))
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@800&family=Inter&family=Kaushan+Script&family=Merienda:wght@400;700&family=Oswald:wght@600&family=Poppins:wght@300&family=Roboto+Condensed:wght@300&family=Signika:wght@300;500&family=Tajawal&family=Teko:wght@300&display=swap" rel="stylesheet">
+       
     <title>Eflav</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
  <style>
@@ -119,18 +129,96 @@ if(isset($_POST['seat_number']))
         align-items: center;
         border-radius: 50%;
     }
+    .counter{
+        float:right;
+        color: white;
+        margin-top:14px;
+        background-color:#ff2c2c;
+        padding:2px;
+        border-radius:5px;
+        /* padding:3px; */
+    }
+    .minus{
+        background-color:#ff2c2c;
+        border:none;
+        font-size:21px;
+        font-weight:bold;
+    }
+    .plus{
+        background-color:#ff2c2c;
+        border:none;
+        font-size:21px;
+        font-weight:bold;
+        padding:5px;
+
+    }
+    .result{
+        font-weight:bold;
+        font-size:18px;
+        color:white !important;
+        background-color:#ff2c2c;
+        padding:1.5px;
+        border-radius:7px;
+        margin-bottom: 2px;
+    }
+
     </style>
 </head>
+<body style="background-color:#1a1a1a;font-family: 'Poppins', sans-serif;">
+    <div class="mob-nav">
+        <nav class="navbar navbar-expand-lg text-uppercase fixed-top" id="mainNav">
+            <div class="container">
+                <a href="item.php
+                " class="navbar-brand">Eflav</a>
+                <!-- <p class="text-white mt-2">HEllo</p> -->
 
+                <a href="cart.php">
+                    <button type="button" class="cart">
+                        <span><i class="bi bi-cart-fill" style="font-size:25px;color:white;margin-right:8px;"></i></span>
+                        <span id="cart_value" class="icon-cart__badge" style="padding:10px;font-weight:bold;font-size:14px">0</span>
+                    </button>
+                </a>
+
+        </nav>
+
+
+
+        <nav <?php
+                // console::log($_SERVER['PHP_SELF']);
+                if ($_SERVER['PHP_SELF'] ==  "/cart.php") {
+                ?> style="display:none" <?php } ?> class="nav scrollmenu" style="margin-top: 80px;">
+            <div class="nav-body">
+                <a class="nav-link text-white" onclick="show_combo()"><img class="nav-img" src="./images/bevarages.jpg"></a>
+                <span class="nav-text">Combo</span>
+            </div>
+            <div class="nav-body">
+                <a class="nav-link text-white" onclick="show_bevarges()"><img class="nav-img" src="./images/bevarages.jpg"></a>
+                <span class="nav-text">Bevarages</span>
+            </div>
+            <div class="nav-body">
+                <a onclick="show_snacks()" class="nav-link text-white "><img class="nav-img" src="./images/snacks.jpg"></a>
+                <span class="nav-text">Snacks</span>
+            </div>
+            <div class="nav-body">
+                <a onclick="show_popcorn()" class="nav-link text-white"><img class="nav-img" src="./images/popcorn.jpg"></a>
+                <span class="nav-text">Popcorns</span>
+            </div>
+        </nav>
+        <span style="color:rgba(255, 255, 255, 2);font-size:10px;">
+            <hr />
+        </span>
+
+
+    </div>
    <?php 
    
-   include "_template/_nav.php";
+   
    include("category/combo.php");
-   include("category/beverages_final.php");
+//    include("category/beverages_final.php");
+   include("category/beverages.php");
    include("category/popcorn.php");
    include("category/snacks.php");
    include("_template/_scripts.php");
 
    ?>
  
-  
