@@ -170,9 +170,9 @@ include "libs/load.php";
             $name = Session::get("name");
             $number = Session::get("number");
             $total_amount = Session::get("total_amount");
+            $seat_number = Session::get("seat_number");
             // session::destroy();
-            Session::delete("name");
-            Session::delete("number");
+
             Session::delete("add");
             Session::delete("count");
             Session::delete("total_amount");
@@ -181,6 +181,7 @@ include "libs/load.php";
             $insert_data = [
                 "customer_name" => $name,
                 "customer_contact" => $number,
+                "seat_number" => $seat_number,
                 "details" => $details,
                 "total" => $total_amount
             ];

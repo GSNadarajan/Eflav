@@ -4,6 +4,7 @@ if(isset($_SESSION["order"])){
     
     Console::log("destroyed");
     $destroyed = "1";
+    
     Session::destroy();
 }
 
