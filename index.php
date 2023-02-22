@@ -1,4 +1,7 @@
-
+<?php
+session_start();
+session_destroy();
+?>
 <?=include "_template/_header.php";?>
 <body class="text-center">
 

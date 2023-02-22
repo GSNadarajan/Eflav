@@ -132,19 +132,19 @@ include "libs/load.php";
         <nav class="navbar navbar-expand-lg text-uppercase fixed-top" id="mainNav">
             <div class="container">
                 <?php
-                if(isset($_GET['order_success'])){
+                if (isset($_GET['order_success'])) {
                 ?>
-                <div>
-                    <a href="index.php" style="text-decoration:none;color:white;font-size:25px;"><i class="bi bi-arrow-left-circle-fill"></i></a>
-                    <a href="index.php " style="color:white !important" class="navbar-brand">Eflav</a>
-                </div>
+                    <div>
+                        <a href="index.php" style="text-decoration:none;color:white;font-size:25px;"><i class="bi bi-arrow-left-circle-fill"></i></a>
+                        <a href="index.php " style="color:white !important" class="navbar-brand">Eflav</a>
+                    </div>
                 <?php
-                }else{
+                } else {
                 ?>
- <div>
-                    <a href="item.php" style="text-decoration:none;color:white;font-size:25px;"><i class="bi bi-arrow-left-circle-fill"></i></a>
-                    <a href="item.php " style="color:white !important" class="navbar-brand">Eflav</a>
-                </div>
+                    <div>
+                        <a href="item.php" style="text-decoration:none;color:white;font-size:25px;"><i class="bi bi-arrow-left-circle-fill"></i></a>
+                        <a href="item.php " style="color:white !important" class="navbar-brand">Eflav</a>
+                    </div>
                 <?php
                 }
                 ?>
@@ -185,13 +185,14 @@ include "libs/load.php";
             $total_amount = Session::get("total_amount");
             $seat_number = Session::get("seat_number");
             // session::destroy();
-
             Session::delete("name");
             Session::delete("number");
             Session::delete("add");
             Session::delete("count");
             Session::delete("total_amount");
+            Session::delete("seat_number");
             Session::delete("movie_nd_time");
+
             $details = serialize($_SESSION);
 
             $insert_data = [
@@ -206,6 +207,7 @@ include "libs/load.php";
             $db = new Unique("orders", "0");
             $result = $db->insert_data($insert_data);
             if ($result) {
+                
                 // session::destroy();
                 Session::set("order", "done");
                 echo ' <div class="alert alert-success mt-5 m-3" role="alert">
