@@ -13,10 +13,11 @@ if(!isset($_SESSION['name'])){
 }
 
 if(isset($_POST['seat_number']))
-    $movie_id = $_POST['movie_name'];
+    $movie_name = $_POST['movie_name'];
     $movie_time = $_POST['movie_time'];
     $s_number  = $_POST['seat_number'];
     Session::set("seat_number",$s_number);
+    Session::set("movie_nd_time","$movie_name - $movie_time");
 ?>
 
 <!DOCTYPE html>

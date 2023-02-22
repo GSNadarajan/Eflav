@@ -181,6 +181,7 @@ include "libs/load.php";
             Console::log("order is here");
             $name = Session::get("name");
             $number = Session::get("number");
+            $movie_nd_time = Session::get("movie_nd_time");
             $total_amount = Session::get("total_amount");
             $seat_number = Session::get("seat_number");
             // session::destroy();
@@ -190,11 +191,13 @@ include "libs/load.php";
             Session::delete("add");
             Session::delete("count");
             Session::delete("total_amount");
+            Session::delete("movie_nd_time");
             $details = serialize($_SESSION);
 
             $insert_data = [
                 "customer_name" => $name,
                 "customer_contact" => $number,
+                "movie_nd_time" => $movie_nd_time,
                 "seat_number" => $seat_number,
                 "details" => $details,
                 "total" => $total_amount
@@ -236,7 +239,7 @@ include "libs/load.php";
                             $i = 1;
                             foreach ($data as $key => $value) {
                                 if ($key != "number" && $key != "name") {
-                                    if ($key != "total_amount" && $key != "add" && $key != "count" && !stristr($key, "item_count_") && $key != "seat_number") {
+                                    if ($key != "total_amount" && $key != "add" && $key != "count" && !stristr($key, "item_count_") && $key != "seat_number"  && $key != "movie_nd_time") {
                                         $split = explode("_", $key);
                                         $item_id = $split[1];
 
