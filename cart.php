@@ -131,11 +131,23 @@ include "libs/load.php";
     <div class="mob-nav">
         <nav class="navbar navbar-expand-lg text-uppercase fixed-top" id="mainNav">
             <div class="container">
+                <?php
+                if(isset($_GET['order_success'])){
+                ?>
                 <div>
+                    <a href="index.php" style="text-decoration:none;color:white;font-size:25px;"><i class="bi bi-arrow-left-circle-fill"></i></a>
+                    <a href="index.php " style="color:white !important" class="navbar-brand">Eflav</a>
+                </div>
+                <?php
+                }else{
+                ?>
+ <div>
                     <a href="item.php" style="text-decoration:none;color:white;font-size:25px;"><i class="bi bi-arrow-left-circle-fill"></i></a>
                     <a href="item.php " style="color:white !important" class="navbar-brand">Eflav</a>
                 </div>
-
+                <?php
+                }
+                ?>
                 <a href="cart.php">
                     <button type="button" class="cart">
                         <span><i class="bi bi-cart-fill" style="font-size:25px;color:white;margin-right:8px;"></i></span>
@@ -173,6 +185,8 @@ include "libs/load.php";
             $seat_number = Session::get("seat_number");
             // session::destroy();
 
+            Session::delete("name");
+            Session::delete("number");
             Session::delete("add");
             Session::delete("count");
             Session::delete("total_amount");

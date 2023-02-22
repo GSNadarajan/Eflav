@@ -8,6 +8,10 @@ if(isset($_SESSION["order"])){
     Session::destroy();
 }
 
+if(!isset($_SESSION['name'])){
+    header("Location: index.php");
+}
+
 if(isset($_POST['seat_number']))
     $movie_id = $_POST['movie_name'];
     $movie_time = $_POST['movie_time'];
