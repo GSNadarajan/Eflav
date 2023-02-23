@@ -24,11 +24,13 @@ if(isset($_POST['seat_number']))
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@800&family=Inter&family=Kaushan+Script&family=Merienda:wght@400;700&family=Oswald:wght@600&family=Poppins:wght@300&family=Roboto+Condensed:wght@300&family=Signika:wght@300;500&family=Tajawal&family=Teko:wght@300&display=swap" rel="stylesheet">
-       
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@800&family=Inter&family=Kaushan+Script&family=Merienda:wght@400;700&family=Oswald:wght@600&family=Poppins:wght@300&family=Roboto+Condensed:wght@300&family=Signika:wght@300;500&family=Tajawal&family=Teko:wght@300&display=swap"
+        rel="stylesheet">
+
     <title>Eflav</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
- <style>
+    <style>
     .card {
         background: rgba(255, 255, 255, 0.08);
         border-radius: 16px;
@@ -128,41 +130,70 @@ if(isset($_POST['seat_number']))
         align-items: center;
         border-radius: 50%;
     }
-    .counter{
-        float:right;
+
+    .counter {
+        float: right;
         color: white;
-        margin-top:14px;
-        background-color:#ff2c2c;
-        padding:2px;
-        border-radius:5px;
+        margin-top: 14px;
+        background-color: #ff2c2c;
+        padding: 2px;
+        border-radius: 5px;
         /* padding:3px; */
     }
-    .minus{
-        background-color:#ff2c2c;
-        border:none;
-        font-size:21px;
-        font-weight:bold;
+
+    .minus {
+        background-color: #ff2c2c;
+        border: none;
+        font-size: 21px;
+        font-weight: bold;
     }
-    .plus{
-        background-color:#ff2c2c;
-        border:none;
-        font-size:21px;
-        font-weight:bold;
-        padding:5px;
+
+    .plus {
+        background-color: #ff2c2c;
+        border: none;
+        font-size: 21px;
+        font-weight: bold;
+        padding: 5px;
 
     }
-    .result{
-        font-weight:bold;
-        font-size:18px;
-        color:white !important;
-        background-color:#ff2c2c;
-        padding:1.5px;
-        border-radius:7px;
+
+    .result {
+        font-weight: bold;
+        font-size: 18px;
+        color: white !important;
+        background-color: #ff2c2c;
+        padding: 1.5px;
+        border-radius: 7px;
         margin-bottom: 2px;
     }
 
+    div.scrollmenu {
+        /* background-color: #333; */
+        overflow: auto;
+        white-space: nowrap;
+
+    }
+
+    div.scrollmenu .nav-body {
+        display: inline-block;
+        color: white;
+        text-align: center;
+        /* padding: 14px; */
+        text-decoration: none;
+    }
+
+    div.scrollmenu a:hover {
+        background-color: #777;
+    }
+
+    .nav-img {
+        height: 50px;
+        width: 50px;
+        border-radius: 25px;
+    }
     </style>
 </head>
+
 <body style="background-color:#1a1a1a;font-family: 'Poppins', sans-serif;">
     <div class="mob-nav">
         <nav class="navbar navbar-expand-lg text-uppercase fixed-top" id="mainNav">
@@ -173,8 +204,10 @@ if(isset($_POST['seat_number']))
 
                 <a href="cart_dev.php">
                     <button type="button" class="cart">
-                        <span><i class="bi bi-cart-fill" style="font-size:25px;color:white;margin-right:8px;"></i></span>
-                        <span id="cart_value" class="icon-cart__badge" style="padding:10px;font-weight:bold;font-size:14px">0</span>
+                        <span><i class="bi bi-cart-fill"
+                                style="font-size:25px;color:white;margin-right:8px;"></i></span>
+                        <span id="cart_value" class="icon-cart__badge"
+                            style="padding:10px;font-weight:bold;font-size:14px">0</span>
                     </button>
                 </a>
 
@@ -186,21 +219,57 @@ if(isset($_POST['seat_number']))
                 // console::log($_SERVER['PHP_SELF']);
                 if ($_SERVER['PHP_SELF'] ==  "/cart.php") {
                 ?> style="display:none" <?php } ?> class="nav scrollmenu" style="margin-top: 80px;">
-            <div class="nav-body">
-                <a class="nav-link text-white" onclick="show_combo()"><img class="nav-img" src="./images/bevarages.jpg"></a>
-                <span class="nav-text">Combo</span>
-            </div>
-            <div class="nav-body">
-                <a class="nav-link text-white" onclick="show_bevarges()"><img class="nav-img" src="./images/bevarages.jpg"></a>
-                <span class="nav-text">Bevarages</span>
-            </div>
-            <div class="nav-body">
-                <a onclick="show_snacks()" class="nav-link text-white "><img class="nav-img" src="./images/snacks.jpg"></a>
-                <span class="nav-text">Snacks</span>
-            </div>
-            <div class="nav-body">
-                <a onclick="show_popcorn()" class="nav-link text-white"><img class="nav-img" src="./images/popcorn.jpg"></a>
-                <span class="nav-text">Popcorns</span>
+            <div class="scrollmenu">
+                <div class="nav-body">
+                    <a class="nav-link text-white" onclick="show_combo()"><img class="nav-img"
+                            src="./images/bevarages.jpg"></a>
+                
+                    <span class="nav-text text-center mt-2">Combo</span>
+                </div>
+                <div class="nav-body">
+                    <a class="nav-link text-white" onclick="show_combo()"><img class="nav-img"
+                            src="./images/bevarages.jpg"></a>
+                
+                    <span class="nav-text text-center mt-2">Combo</span>
+                </div>
+                <div class="nav-body">
+                    <a class="nav-link text-white" onclick="show_combo()"><img class="nav-img"
+                            src="./images/bevarages.jpg"></a>
+                
+                    <span class="nav-text text-center mt-2">Combo</span>
+                </div>
+                <div class="nav-body">
+                    <a class="nav-link text-white" onclick="show_combo()"><img class="nav-img"
+                            src="./images/bevarages.jpg"></a>
+                
+                    <span class="nav-text text-center mt-2">Combo</span>
+                </div>
+                <div class="nav-body">
+                    <a class="nav-link text-white" onclick="show_combo()"><img class="nav-img"
+                            src="./images/bevarages.jpg"></a>
+                
+                    <span class="nav-text text-center mt-2">Combo</span>
+                </div>
+                <div class="nav-body">
+                    <a class="nav-link text-white" onclick="show_combo()"><img class="nav-img"
+                            src="./images/bevarages.jpg"></a>
+                
+                    <span class="nav-text text-center mt-2">Combo</span>
+                </div>
+                <div class="nav-body">
+                    <a class="nav-link text-white" onclick="show_combo()"><img class="nav-img"
+                            src="./images/bevarages.jpg"></a>
+                
+                    <span class="nav-text text-center mt-2">Combo</span>
+                </div>
+                <div class="nav-body">
+                    <a class="nav-link text-white" onclick="show_combo()"><img class="nav-img"
+                            src="./images/bevarages.jpg"></a>
+                
+                    <span class="nav-text text-center mt-2">Combo</span>
+                </div>
+
+               
             </div>
         </nav>
         <span style="color:rgba(255, 255, 255, 2);font-size:10px;">
@@ -209,7 +278,7 @@ if(isset($_POST['seat_number']))
 
 
     </div>
-   <?php 
+    <?php 
    
    
    include("category/combo.php");
@@ -220,4 +289,3 @@ if(isset($_POST['seat_number']))
    include("_template/_scripts.php");
 
    ?>
- 
