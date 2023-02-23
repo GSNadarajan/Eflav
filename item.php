@@ -15,7 +15,7 @@ include "libs/load.php";
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <title>Eflav</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
- <style>
+    <style>
     .card {
         background: rgba(255, 255, 255, 0.08);
         border-radius: 16px;
@@ -115,18 +115,34 @@ include "libs/load.php";
         align-items: center;
         border-radius: 50%;
     }
+
+    div.sticky {
+        position: -webkit-sticky;
+        position: sticky;
+        /* top: 500px; */
+        bottom: -500px;
+        background-color: #ff2c2c;
+        padding: 20px;
+        text-align: center;
+        color:white;
+        font-size: 20px;
+    }
     </style>
 </head>
 
-   <?php 
+<?php 
    
    include "_template/_nav.php";
    include("category/combo.php");
    include("category/snacks.php");
    include("category/beverages.php");
    include("category/popcorn.php");
+
    include("_template/_scripts.php");
 
    ?>
- 
-  
+
+<div class="container">
+    <div class="sticky">View cart</div>
+</div>
+
