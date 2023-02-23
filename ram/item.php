@@ -31,9 +31,9 @@ if(isset($_POST['seat_number']))
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@800&family=Inter&family=Kaushan+Script&family=Merienda:wght@400;700&family=Oswald:wght@600&family=Poppins:wght@300&family=Roboto+Condensed:wght@300&family=Signika:wght@300;500&family=Tajawal&family=Teko:wght@300&display=swap"
-        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
 
     <title>Eflav</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
@@ -178,6 +178,7 @@ if(isset($_POST['seat_number']))
         /* background-color: #333; */
         overflow: auto;
         white-space: nowrap;
+        /* overflow: hidden; */
 
     }
 
@@ -188,13 +189,10 @@ if(isset($_POST['seat_number']))
         text-decoration: none;
     }
 
-    div.scrollmenu a:hover {
-        background-color: #777;
-    }
     </style>
 </head>
 
-<body style="background-color:#1a1a1a;font-family: 'Poppins', sans-serif;">
+<body style="background-color:#1a1a1a;font-family: 'Ubuntu', sans-serif;">
     <div class="mob-nav">
         <nav class="navbar navbar-expand-lg text-uppercase fixed-top" id="mainNav">
             <div class="container">
