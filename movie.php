@@ -39,7 +39,7 @@ if (isset($_POST['name'])) {
                             $movie = new Unique("movie","-");
                             foreach($movie->getTotal() as $key => $value){
                                 ?>
-                                <option value="<?=$value['id']?>"><?=$value['name']?></option>
+                                <option value="<?=$value['name']?>"><?=$value['name']?></option>
                             <?php
                             }
                             ?>
