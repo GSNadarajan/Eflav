@@ -1,5 +1,5 @@
 <section id="combo">
-    <div class="container mt-2" style="margin-top:30px !important;">
+    <div class="container mt-2" style="margin-top:30px !important;margin-bottom:74px;">
         <h3 class="card-title">Combo</h3>
 
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-4 g-3 mt-3">
@@ -24,7 +24,7 @@
                         </div>
 
                         <div style="text-align:left;">
-                            <h3 class="mr-5 " style="font-weight:bold;font-size:15px;color:white;margin-top:10px;">
+                            <h3 class="mr-5 " style="font-weight:bold;font-size:14px;color:white;margin-top:10px;">
                                 <?= ucfirst($value['name']) ?></h3>
                             <br>
                             <h6 class="" style="color:white;margin-top:-30px;"><s>Rs:<?= $price[0] ?>/</s>
@@ -33,15 +33,15 @@
                             <br>
 
                         </div>
-                        <div style="float:right;background-color:#ff2c2c;color: white;margin-top:-61px;">
+                        <div class="counter" style="margin-top: -71px;">
 
-                            <button onclick="totalclick(-1,1,<?=$value['id']?>)">-</button>
-                            <span id="totalclicks_1_<?=$value['id']?>"><?php
+                            <button onclick="totalclick(-1,1,<?=$value['id']?>)" class="minus">-</button>
+                            <span id="totalclicks_1_<?=$value['id']?>" class="result"><?php
                             if($destroyed != 1){
                                 $item_id = $value['id'];
                                 $session_key = "1_$item_id";
                                 if(isset($_SESSION["$session_key"])){
-                                    Console::log($session_key);
+                                    // Console::log($session_key);
                                     echo Session::get($session_key);
                                 }else{
                                     echo "0";
@@ -53,7 +53,7 @@
 
 
                             ?></span>
-                            <button onclick="totalclick(1,1,<?=$value['id']?>)">+</button>
+                            <button onclick="totalclick(1,1,<?=$value['id']?>)" class="plus">+</button>
 
                         </div>
                         

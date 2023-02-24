@@ -10,7 +10,7 @@
                 <a href="cart.php">
                     <button type="button" class="cart">
                         <span><i class="bi bi-cart-fill" style="font-size:25px;color:white;margin-right:8px;"></i></span>
-                        <span id="cart_value" class="icon-cart__badge">0</span>
+                        <span id="cart_value" class="icon-cart__badge" style="padding:10px;font-weight:bold;font-size:14px">0</span>
                     </button>
                 </a>
 

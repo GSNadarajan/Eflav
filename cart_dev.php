@@ -12,6 +12,7 @@ include "libs/load.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@800&family=Inter&family=Kaushan+Script&family=Merienda:wght@400;700&family=Oswald:wght@600&family=Poppins:wght@300&family=Roboto+Condensed:wght@300&family=Signika:wght@300;500&family=Tajawal&family=Teko:wght@300&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <title>Eflav</title>
@@ -127,7 +128,7 @@ include "libs/load.php";
     </style>
 </head>
 
-<body style="background-color:#1a1a1a;font-family: cursive;">
+<body style="background-color:#1a1a1a;font-family: 'Poppins', sans-serif;">
     <div class="mob-nav">
         <nav class="navbar navbar-expand-lg text-uppercase fixed-top" id="mainNav">
             <div class="container">
@@ -139,7 +140,7 @@ include "libs/load.php";
                 <a href="cart_dev.php">
                     <button type="button" class="cart">
                         <span><i class="bi bi-cart-fill" style="font-size:25px;color:white;margin-right:8px;"></i></span>
-                        <span id="cart_value" class="icon-cart__badge">0</span>
+                        <span id="cart_value" class="icon-cart__badge" style="padding:10px;font-weight:bold;font-size:14px">0</span>
                     </button>
                 </a>
 

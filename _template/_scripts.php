@@ -20,6 +20,7 @@
     }
 
     function show_bevarges() {
+        console.log("beverages");
         $("#beverages").show();
         $("#snacks").hide();
         $("#combo").hide();

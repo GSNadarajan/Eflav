@@ -20,7 +20,7 @@ if (isset($_POST['name'])) {
         <nav class="navbar">
             <div class="container">
                 <a class="navbar-brand" href="#">
-                    <img src="assets/img/logo.svg" alt="Bootstrap" width="50" height="50">
+                    <img src="https://eflav.in/ramcinemas/assets/img/logo.png" alt="Bootstrap" width="50" height="50">
                 </a>
             </div>
         </nav>
@@ -33,23 +33,36 @@ if (isset($_POST['name'])) {
                     <div class="mb-1">
 
                         <label for="exampleInputEmail1" class="form-label text-white mt-3">Select movie</label>
-                        <select name="movie_name" class="form-select" aria-label="Default select example">
-                            <option selected>Open this select movie</option>
-                            <option value="Varisu">Varisu</option>
-                            <option value="Thunivu">Thunivu</option>
-                            <option value="KGF">KGF</option>
+                        <select name="movie_name" onclick="getTime()" class="form-select" aria-label="Default select example">
+                            <?php
+
+                            $movie = new Unique("movie","-");
+                            foreach($movie->getTotal() as $key => $value){
+                                ?>
+                                <option value="<?=$value['id']?>"><?=$value['name']?></option>
+                            <?php
+                            }
+                            ?>
+                            
+                            
                         </select>
                     </div>
                 </div>
                 <div class="container px-4">
+                    <div class="mb-1">
+
+                        <label for="exampleInputEmail1" class="form-label text-white mt-3">Movie time</label>
+                        <select name="movie_time" class="form-select" aria-label="Default select example">
+                            <option value="10:00 AM"> 10:00 AM</option>
+                            <option value="12:00 PM"> 12:00 PM</option>
+                            <option value="3:00 PM"> 3:00 PM</option>
+                            
+                        </select>
+                    </div>
+                </div>
+
+                <div class="container px-4">
                     <div class="">
-
-
-                        <div class="mb-1">
-                            <label for="exampleInputEmail1" class="form-label text-white mt-3">Enter movie time</label>
-                            <input type="text" class="form-control" name="movie_time" id="exampleInputEmail1" aria-describedby="emailHelp" required>
-                            <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
-                        </div>
 
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label text-white mt-3">Enter seat number</label>
